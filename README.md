@@ -1,73 +1,108 @@
-# React + TypeScript + Vite
+# 🗺️ AOI Cologne Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + TypeScript + Vite project using **OpenLayers** to define and manage Areas of Interest (AOI).  
+Users can search for a city/region, highlight it on the map, apply outlines as base images, and export AOIs to GeoJSON.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+- **Interactive Map** powered by OpenLayers
+- **Search & Geocode** using Nominatim (OpenStreetMap)
+- **AOI Definition Panel**
+  - Search for a city, town, or region
+  - Highlight and style AOIs
+  - Apply outline as base image
+  - Export AOIs to `.geojson`
+- **Define Area Panel**
+  - Entry point for users
+  - Navigate to AOI Definition Panel
+- **Navigation** between panels using React Router
+- **Map Tools & Overlay Panels** for extended functionality
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📂 Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+src/ 
+├── App.tsx
+├── Components/
+│ ├── MapCanvas.tsx 
+│ ├── DefineAreaPanel.tsx 
+│ ├── AOIDefinitionPanel.tsx
+│ ├── AOIDropdown.tsx 
+│ ├── MapOverlayPanel.tsx 
+│ ├── MapToolPanel.tsx 
+│ └── Sidebar.tsx
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🛠️ Installation
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Clone the repo and install dependencies:
+
+```bash
+git clone https://github.com/<your-username>/aoi-cologne.git
+cd aoi-cologne
+npm install
+
+----
+
+▶️ Running the Project
+//Start the development server:
+command : npm run dev
+
+Open your browser at http://localhost:5173
+
+
+🔄 Navigation Flow
+Home (/) → DefineAreaPanel
+
+Enter a city/region
+
+Click search → navigates to AOI Definition
+
+AOI Definition (/aoi-definition) → AOIDefinitionPanel
+
+Highlights the selected AOI
+
+Apply outline as base image
+
+Export AOI to GeoJSON
+
+Navigate back to / with the Back button.
+
+----
+
+📦 Dependencies
+    React + TypeScript
+    Vite
+    OpenLayers
+    React Router DOM
+
+----
+
+📌 Future Improvements
+Shape file upload support
+
+Enhanced AOI editing tools
+
+Persistent AOI storage
+
+Automated tests with Playwright
+
+
+---
+
+## ✅ Next Step
+1. Create the file in VS Code: `README.md`
+2. Paste the above content.
+3. Save → then run:
+
+```bash
+git add README.md
+git commit -m "Add project README"
+git push
