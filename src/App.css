@@ -1,0 +1,39 @@
+/* Reset and base styles */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure the app fills the screen */
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9fafb; /* Tailwind gray-50 equivalent */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Utility for panels */
+aside {
+  background-color: #ffffff;
+}
+
+/* Dimension overlay labels (dev mode) */
+.dimension-label {
+  font-size: 10px;
+  color: #6b7280; /* Tailwind gray-500 */
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #e5e7eb; /* Tailwind gray-200 */
+}
